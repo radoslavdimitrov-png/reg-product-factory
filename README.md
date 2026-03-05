@@ -1,4 +1,4 @@
-# 🏭 T212 AI Product Factory
+# 🏭 T212 Reg Product Factory
 
 Welcome to the Trading 212 Reg Product Factory. This repository contains the "Brains" (System Instructions, Global Context Files, and Agent Skills) that power our regulatory product development workflows. 
 
