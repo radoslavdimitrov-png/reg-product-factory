@@ -59,15 +59,7 @@ Rules:
 - **Customer Care:** expected queries + suggested macros (bullets).
 - **Help Centre & AI KB updates:** 2–4 bullets with exact intent changes (what the bot should answer and what it must not claim).
 
-### 7) Client Communications (Drafts)
-If communications are required, draft:
-- **Email Subject + Pre-header**
-- **In-app message / push copy**
-Constraints:
-- Plain English, educational, direct.
-- No legal promises. Mark as “Requires Compliance sign-off”.
-
-### 8) Rollout Plan
+### 7) Rollout Plan
 - Focus specifically on this functionality.
 - Detail **when** we should launch (e.g., milestones, deadlines).
 - Outline the **rollout strategy** (e.g., staged rollout, immediate full launch, entity-by-entity).
