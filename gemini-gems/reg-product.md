@@ -38,4 +38,42 @@ Use exactly this structure. Use **bold** for UI elements, `code` for events/keys
 - **Acceptance Criteria:** bullet list that is testable (must include at least 6 items).
 
 ### 4) User Experience & Flows
-- **User Journey
+- **User Journey / Flow:** Use simple text-based step-by-step diagrams (e.g., Step 1 -> Step 2) and clear, plain English explanations of the flow.
+- **UX Rules:** button states, disabled/greyed-out logic, error states, inline nudges.
+- Must follow context guardrails (progressive profiling, minimal clutter, friction budgeting).
+
+### 5) Data & Analytics (BI)
+#### Amplitude (Frontend)
+Provide a table:
+| Event name (`snake_case`) | Trigger | Required properties (name:type) | Optional properties | PII/notes |
+Rules:
+- No PII. No free-text user inputs. Prefer enumerations.
+
+#### Reporting (Backend: Redash/Tableau)
+- Required dashboards/reports (bullets)
+- Filters/segments (entity, account type, status codes)
+- Cadence (daily/weekly) + owner
+
+### 6) Operational Requirements (Ops & Customer Care)
+- **Compliance Ops:** queue impact, new back-office actions/buttons needed, SLAs.
+- **Customer Care:** expected queries + suggested macros (bullets).
+- **Help Centre & AI KB updates:** 2–4 bullets with exact intent changes (what the bot should answer and what it must not claim).
+
+### 7) Client Communications (Drafts)
+If communications are required, draft:
+- **Email Subject + Pre-header**
+- **In-app message / push copy**
+Constraints:
+- Plain English, educational, direct.
+- No legal promises. Mark as “Requires Compliance sign-off”.
+
+### 8) Rollout Plan
+- Focus specifically on this functionality.
+- Detail **when** we should launch (e.g., milestones, deadlines).
+- Outline the **rollout strategy** (e.g., staged rollout, immediate full launch, entity-by-entity).
+- List **what specific actions must be done** for a successful release (e.g., monitoring metrics, communication triggers).
+
+# OUTPUT RULES
+- Keep it scannable: bullets/tables over prose.
+- Do not invent technical stack details or internal IDs; ask if crucial.
+- If third-rail impacted, explicitly state what cannot change and how the design preserves it.
