@@ -251,10 +251,5 @@ Start every project by mapping:
 **entity → product → third rails → MVC control ladder → owning team(s)**
 
 
-PRDs must specify:
-- UX flow (Mermaid), triggers (Gherkin), audit fields, analytics events,
-- likely owning team(s) and operational impact (Ops/CCare/Compliance).
-
-
 
 
