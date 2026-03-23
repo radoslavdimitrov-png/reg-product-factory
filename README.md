@@ -1,51 +1,177 @@
 # 🏭 T212 Reg Product Factory
 
-Welcome to the Trading 212 Reg Product Factory. This repository contains the "Brains" (System Instructions, Global Context Files, and Agent Skills) that power our regulatory product development workflows. 
-
-We treat AI prompts like software (PromptOps). By version-controlling our prompts here, we ensure that every Product Manager and Compliance Officer relies on the most up-to-date legal constraints and market benchmarks to build frictionless, high-converting features.
-
-
-
-## 📂 Repository Structure
-
-
-
-* **`01-global-context/`**: The single source of truth. Contains `T212_Product_Contex.md`, which dictates our risk appetite, entity permissions, third-rail defenses, and tech stack standards. Update this file when laws or company policies change.
-* **`02-gemini-gems/`**: The core System Instructions for our web-based AI Agents (The "REG" Pipeline).
-* **`03-claude-skills/`**: Executable markdown skills and Python scripts for Claude Code / Cowork (e.g., automated Jira ticket creation, Redash query generation).
-* **`04-workflows-and-handoffs/`**: Meta-prompts used to compress and transfer context seamlessly between different AI models.
+Welcome to the Trading 212 Reg Product Factory. This
+repository contains the system instructions, context
+files, and automation skills that power our regulatory
+product development pipeline.
 
 ---
 
-## 🤖 The Core Pipeline (The "REG" Gems)
+## 📂 Repository Structure
 
-This repository houses four primary AI Agents designed to take a feature from a raw idea to an execution-ready engineering ticket in minutes.
+**`00-global-context/`**
+The single source of truth for all agents. Contains
+`T212-group-context.md`, which defines our risk
+appetite, entity permissions, UX guardrails, product
+availability, engineering ownership, and the
+zero-hallucination policy. Every agent loads this
+file before reasoning. Update it when regulations,
+product permissions, or company policies change.
 
-1. **REG Comp Analysis:** *Use when you have a brand-new product idea and need to find the lowest-friction, legally viable UX path.* Maps out the "Minimum Viable Compliance" (MVC) and proposes an initial UX concept.
-2. **REG Comp Audit:** *Use when Compliance hands you a new rule or demand and you need to push back against "gold-plating."* Stress-tests incoming demands and arms you with T212 defense scripts.
-3. **REG Market Research:** *Use when you need to benchmark how Tier 1 competitors handle a specific regulatory or user flow.* Investigates live competitor UX and Reddit sentiment to define the market standard.
-4. **REG Product (PRD Writer):** *Use when you are ready to turn your research and constraints into an execution-ready PRD.* Automatically drafts Jira-ready tickets with Gherkin logic, Mermaid flows, and Amplitude tracking.
+**`01-intake/`**
+The first step of every initiative. Contains the
+ChatGPT Custom GPT instructions for the Intake Brief
+agent, which collects and structures initiative
+information before the pipeline begins.
+
+**`03a-comp-audit/`**
+Path A — used when Compliance or Legal have provided
+an existing analysis that needs to be stress-tested.
+Contains the ChatGPT Custom GPT instructions and
+output templates for the REG Comp Audit agent.
+
+**`03b-comp-analysis/`**
+Path B — used when no external analysis exists and
+we need to build the compliance picture from scratch.
+Contains the ChatGPT Custom GPT instructions and
+output templates for the REG Comp Analysis agent.
+
+**`04-market-research/`**
+Benchmarks how Tier 1 competitors handle the
+specific regulatory friction point identified in the
+compliance step. Contains the ChatGPT Custom GPT
+instructions and output templates for the REG Market
+Research agent.
+
+**`05-prd/`**
+Turns the research and compliance findings into an
+approved PRD and publishes it to Confluence. Contains:
+- Claude Project instructions for the REG Product
+  PRD agent (drafting and self-critique)
+- Output templates for the PRD agent
+- Cowork skill for writing the approved PRD to
+  Confluence in the correct format
+
+---
+
+## 🔄 The Pipeline
+
+Every initiative follows one of two paths depending
+on whether Compliance have already produced an
+analysis.
+```
+01 — INTAKE BRIEF (ChatGPT)
+Collect and structure the initiative information.
+Output: structured brief + REG and STRAT ticket drafts
+        |
+        ├── PATH A: External compliance analysis exists
+        |         |
+        |    03a — COMP AUDIT (ChatGPT)
+        |    Stress-test the analysis for gold-plating.
+        |         |
+        └── PATH B: No analysis exists
+                  |
+             03b — COMP ANALYSIS (ChatGPT)
+             Build the MVC compliance picture
+             from scratch.
+                  |
+        Both paths reconverge here:
+                  |
+        04 — MARKET RESEARCH (ChatGPT)
+        Benchmark Tier 1 competitors and define
+        the lowest-friction market standard.
+                  |
+        05 — PRD DRAFT (Claude Projects)
+        Draft the plain English business case
+        and PRD. Self-critique runs automatically.
+                  |
+        05 — CONFLUENCE (Claude Cowork)
+        Publish the approved PRD to the existing
+        Confluence page in the correct format.
+```
+
+---
+
+## 🤖 The Agents
+
+| Step | Agent | Tool | Path |
+| :--- | :--- | :--- | :--- |
+| 01 | REG Intake Brief | ChatGPT Custom GPT | All |
+| 03a | REG Comp Audit | ChatGPT Custom GPT | A only |
+| 03b | REG Comp Analysis | ChatGPT Custom GPT | B only |
+| 04 | REG Market Research | ChatGPT Custom GPT | All |
+| 05 | REG Product PRD | Claude Project | All |
+| 05 | REG PRD to Confluence | Claude Cowork Skill | All |
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### For Gemini / Web UI Users:
-1. Open the `01-global-context` folder and download `T212_Product_Contex.md`. Upload this file as the "Knowledge" document to your AI workspace.
-2. Open the `02-gemini-gems` folder, copy the text for the specific Gem you need, and paste it into the "System Instructions" field.
-3. If you need to switch AIs midway through a complex task, use the `Cross_Model_Handoff.md` template in folder `04` to prevent context loss.
+### Before you begin
+Every agent loads `T212-group-context.md` as its
+policy document. For ChatGPT Custom GPTs this happens
+automatically via auto-fetch at the start of each
+session. For the Claude Project, the file is uploaded
+once to the project knowledge.
 
-### For Claude Code / Cowork Users:
-1. Clone this repository to your local machine: `git clone [Insert Repo URL]`
-2. Mount the repository into your Claude Cowork workspace.
-3. Claude will automatically read the `SKILL.md` files in the `03-claude-skills` directory and natively understand how to execute your automated workflows.
+You do not need to upload or paste the context file
+manually each time.
+
+### Running an initiative
+
+**Step 1 — Open the Intake GPT in ChatGPT**
+- Open your ChatGPT Project for this initiative
+- Start a new chat with the REG Intake Brief GPT
+- Give it a one or two sentence description of the
+  initiative
+- Answer its clarifying questions
+- It will produce a structured brief and draft REG
+  and STRAT ticket names and descriptions
+- Create the two Jira tickets manually using the
+  drafts
+
+**Step 2 — Run the compliance step**
+- Start a new chat in the same ChatGPT Project
+- If Path A: open the REG Comp Audit GPT and paste
+  the intake handover block plus the external
+  compliance analysis
+- If Path B: open the REG Comp Analysis GPT and
+  paste the intake handover block
+- Review the output and iterate as needed
+
+**Step 3 — Run market research**
+- Start a new chat in the same ChatGPT Project
+- Open the REG Market Research GPT
+- Paste the handover block from Step 2
+- Review the benchmark and iterate as needed
+
+**Step 4 — Draft the PRD in Claude**
+- Open the REG Product Factory project in Claude
+- Start a new chat thread named after the initiative
+- Paste the cross-model handover block from ChatGPT
+- Claude will draft the PRD and automatically
+  self-critique it
+- Iterate until the critique verdict is
+  "Ready to proceed"
+
+**Step 5 — Publish to Confluence**
+- Open Claude Cowork
+- Say: "Run the reg-prd-confluence skill"
+- Paste the Confluence page URL (created automatically
+  when you raised the STRAT Jira ticket)
+- Paste the approved PRD markdown
+- Cowork will update the page in the correct format
 
 ---
 
-## 🔄 The Kaizen Loop (How to Contribute)
+## ⚠️ Zero Hallucination Policy
 
-AI models are only as smart as their context. If you encounter a new edge case (e.g., BaFin updates a rule for German users, or we migrate to a new KYC provider), **do not just fix the prompt in your private chat.** 1. Create a branch.
-2. Update the `T212_Product_Contex.md` file with the new rule.
-3. Submit a Pull Request. 
+All agents operate under a strict zero-hallucination
+policy defined in `T212-group-context.md`. No agent
+will fabricate regulatory citations, competitor
+behaviour, or internal system details. If something
+cannot be verified, it is labelled UNKNOWN.
 
-When your PR is merged, the entire Product and Compliance team instantly gets smarter.
+Any output that contains fabricated citations or
+invented facts is considered invalid and must be
+discarded and regenerated.
