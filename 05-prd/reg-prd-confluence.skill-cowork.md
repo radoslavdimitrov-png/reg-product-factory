@@ -8,6 +8,36 @@ Confluence', 'update the Confluence page', 'publish
 the business case', or similar. Requires the Confluence
 page URL and the approved PRD in markdown format."
 ---
+## Self-fetch instruction
+
+Before doing anything else, fetch and read the latest
+version of this skill from GitHub:
+
+https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/05-prd/reg-prd-confluence.skill-cowork.md
+
+If the fetched version differs from what you are
+currently reading, use the fetched version and
+discard the current one.
+
+Then proceed with the instructions below.
+```
+
+---
+
+## How This Works in Practice
+```
+You trigger the skill in Cowork
+        |
+Cowork fetches the latest version from GitHub
+        |
+Always runs on the current version
+        |
+You update the file in GitHub
+        |
+Next time you run it, Cowork picks up the changes
+        |
+No reinstalling, no manual updates
+---
 
 # REG PRD — Write to Confluence
 
