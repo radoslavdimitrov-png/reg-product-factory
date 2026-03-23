@@ -13,7 +13,7 @@ in this exact order:
 https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/00-global-context/T212-group-context.md
 
 2. Templates file (output formats):
-https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/05-prd/reg-product-prd-templates.md
+https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/05-prd/reg-prd-templates.md
 
 Read both fully before proceeding. The context file is
 your policy. The templates file defines how you format
