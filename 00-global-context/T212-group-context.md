@@ -233,25 +233,44 @@ where the MVC ladder offers a lower-friction defensible alternative.
 
 ### 3.2 Availability matrix
 
-| Product | UK | CY | DE | AU | ME | Notes / Defence |
+**Entity column key:**
+UK = T212 UK | CY = T212 CY | DE = T212 DE |
+AU = T212 AU | ME = T212 ME
+
+| Product | UK | CY | DE | AU | ME | Notes |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| **Invest (Stocks/ETF)** | ✅ | ✅ | ✅ | ✅ | ✅ | Core product; commission-free. ME: agency model via T212 UK. |
-| **CFD Trading** | ✅ | ✅ | ✅ | ❌ | ✅ | Matched principal; 100% hedged back-to-back with T212 Ireland. |
-| **Crypto Spot** | ❌ | ✅ | ✅ | ❌ | ✅ | UK/AU/DE/ME cannot trade real crypto. |
-| **Crypto ETNs** | ✅ | ✅ | ✅ | ✅ | ✅ | UK: restricted investor self-declare. |
-| **Complex ETPs / Leveraged ETPs** | ✅ | ✅ | ✅ | ✅ | ✅ | ME: appropriateness assessment mandatory before access. |
-| **Stocks and Shares ISA ** | ✅ | ❌ | ❌ | ❌ | ❌ | UK tax wrappers only. |
-| **Cash ISA ** | ✅ | ❌ | ❌ | ❌ | ❌ | UK tax wrappers only. |
-| **SIPP** | ✅ | ❌ | ❌ | ❌ | ❌ | UK personal pension only. |
-| **Pies** | ✅ | ✅ | ✅ | ✅ | ✅ | A Pie is a custom investment portfolio made up of multiple "slices," where each slice is a stock or ETF with a target percentage allocation. Instead of buying assets individually, you invest into the Pie as a whole and Trading 212 distributes the funds across your chosen holdings automatically. You can build your own, use a model portfolio, or copy one from another user. Execution-only; user sets all parameters. ME availability unconfirmed. |
-| **AutoInvest** | ✅ | ✅ | ✅ | ✅ | ✅ | AAutoInvest is a recurring deposit scheduler that automatically puts money into your Pie(s) on a chosen frequency — daily, weekly, fortnightly, monthly, etc. It pulls funds from your cash balance or linked bank card and distributes them either to rebalance underweight slices or strictly by target percentages. |
-| **Fractional Shares** | ✅ | ✅ | ✅ | ✅ | ✅ | Bractional shares let you buy a slice of a stock — e.g. £1 worth of Amazon — rather than needing to afford a full share. You receive proportional dividends and the same order types as whole shares, with no extra fees. It removes the capital barrier to investing in high-priced stocks. |
-| **Share Lending** | ✅ | ✅ | ✅ | ✅ | ✅ | Opt-in only; collateralised. Opt-in programme where Trading 212 lends your shares to institutional borrowers and splits the interest 50/50 with you, paid daily. Your shares remain fully tradeable and dividends are protected; lent shares are collateralised at 102%+. Trade-off: you lose voting rights and manufactured dividends may carry different tax treatment. |
-| **Extended Hours** | ✅ | ✅ | ✅ | ✅ | ✅ | Enables trading 5,600+ US stocks around the clock Monday–Friday across pre-market, regular, after-hours, and overnight sessions — no commission. Users can toggle extended hours on/off per order. Key risk: lower liquidity and wider spreads outside regular market hours. |
-| **Interest on Cash / QMMFs** | ✅ | ✅ | ✅ | ✅ | ✅ | Uninvested cash in your account earns daily interest (e.g. 3.55% AER on GBP, 2.2% APY on EUR) with no minimum balance or lock-in period. Funds are held in qualifying money market funds (QMMFs) and bank deposits, and you can opt out at any time. Think of it as a savings-like yield on idle cash. |
-| **Multi-Currency** | ✅ | ✅ | ✅ | ✅ | ✅ | Ancillary; no outbound payments. Holds balances in 12 currencies within a single Invest account, letting you trade assets in their native currency (e.g. USD for US stocks) to avoid FX conversion entirely. When conversion is needed, the fee is 0.15% at live interbank rates — available even on weekends. Note: not available in ISA or CFD accounts. |
-| **Portfolio Transfers** | ✅ | ✅ | ❌ | ✅ | ❌ | DE = ops limitation (fix in progress). |
-| **T212 Card** | ✅ | ✅ | ✅ | ❌ | ❌ | Issuer is Paynetics. A free Mastercard debit card that draws from your Trading 212 account with no FX fees (true interbank rate) across 176 currencies. It earns up to 1.5% cashback on spending and includes free ATM withdrawals up to €400/month. |
+| **Invest (Stocks / ETF)** | ✅ | ✅ | ✅ | ✅ | ✅ | Core product; commission-free. ME: agency model via T212 UK. |
+| **Fractional Shares** | ✅ | ✅ | ✅ | ✅ | ✅ | Beneficial interest framing. |
+| **ETFs** | ✅ | ✅ | ✅ | ✅ | ✅ | Legacy product. |
+| **Fractional ETFs** | ✅ | ✅ | ✅ | ✅ | ✅ | Legacy product. |
+| **Frankfurt Stock Exchange** | ✅ | ✅ | ✅ | ✅ | ✅ | Additional equity market. |
+| **Canadian Shares** | ✅ | ✅ | ✅ | ✅ | ✅ | Additional equity market. |
+| **US Treasuries** | ✅ | ✅ | ✅ | ❌ | ✅ | Fixed income; distributor role. |
+| **CFD Trading (Shares)** | ✅ | ✅ | ✅ | ✅ | ✅ | ME: matched principal; 100% hedged back-to-back with T212 UK. |
+| **CFDs on Crypto** | ❌ | ✅ | ✅ | ❌ | ❌ | UK: not permitted. |
+| **CFD Futures Rollover** | ✅ | ✅ | ❌ | ❌ | ✅ | UK approved Jan 2026; CY approved Feb 2026. |
+| **CFDs — other underlyings** | ✅ | ✅ | ✅ | ✅ | ✅ | ETFs, indices, index futures, commodity futures, currency pairs. |
+| **Crypto Spot** | ❌ | ✅ | ❌ | ❌ | ❌ | UK/AU/DE/ME: not permitted. |
+| **Crypto on Invest (MCW)** | ❌ | ✅ | ❌ | ❌ | ❌ | CY only. Crypto assets on Invest account. |
+| **Crypto ETNs** | ✅ | ✅ | ✅ | ✅ | ✅ | UK: restricted investor self-declaration required. |
+| **Complex ETPs / Leveraged ETPs / Inverse ETPs / ETCs** | ✅ | ✅ | ✅ | ❌ | ✅ | ME: appropriateness assessment mandatory before access. |
+| **ISA (Stocks and Shares / Flexible)** | ✅ | ❌ | ❌ | ❌ | ❌ | UK tax wrapper only. |
+| **Cash ISA** | ✅ | ❌ | ❌ | ❌ | ❌ | UK only. Includes tracker rate, promotional rate, flexible features, and monthly interest. |
+| **SIPP** | ✅ | ❌ | ❌ | ❌ | ❌ | UK only. Self Invested Personal Pension. |
+| **Pies / AutoInvest** | ✅ | ✅ | ✅ | ✅ | ✅ | Execution-only; user sets all parameters. Non-negotiable mechanic. |
+| **Model Portfolios (Model Pie)** | ✅ | ✅ | ✅ | ✅ | ✅ | Pre-built pie structures. |
+| **Share Lending** | ✅ | ✅ | ❌ | ❌ | ✅ | Opt-in only; collateralised. Non-negotiable mechanic. |
+| **Extended Hours Trading** | ✅ | ✅ | ✅ | ✅ | ✅ | Disclosure over prohibition. |
+| **24/5 Trading** | ✅ | ✅ | ✅ | ✅ | ✅ | |
+| **Multi-Currency Account** | ✅ | ✅ | ✅ | ❌ | ✅ | Ancillary; no outbound payments. Non-negotiable mechanic. |
+| **Interest on Cash / QMMFs** | ✅ | ✅ | ✅ | ❌ | ✅ | ME: uninvested cash placed into EU/UK-domiciled QMMFs. Not a bank deposit. |
+| **Direct Debit (AutoInvest into Pie)** | ❌ | ❌ | ✅ | ❌ | ❌ | DE only. Approved March 2026. |
+| **Spending Pot** | ✅ | ✅ | ✅ | ✅ | ✅ | Group-wide feature. |
+| **Spare Change and Cashback** | ❌ | ✅ | ❌ | ❌ | ❌ | CY only. |
+| **T212 Card** | ✅ | ✅ | ✅ | ❌ | ❌ | Issuer is Paynetics; UK approved Mar 2024, DE approved Jan 2026. |
+| **Portfolio Transfers** | ✅ | ✅ | ❌ | ✅ | ❌ | DE: ops limitation (fix in progress), not a legal block. |
+| **Client Trading API** | ✅ | ✅ | ✅ | ✅ | ✅ | Group-wide. |
+| **Freedom of Services (FoS)** | ❌ | ✅ | ✅ | ❌ | ❌ | All services on FoS basis across EU states. DE FoS: CFDs not offered in Spain. CY FoS: CFDs offered with restrictions in Spain and France. Not offered in Belgium. |
 
 ---
 
