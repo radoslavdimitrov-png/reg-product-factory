@@ -57,11 +57,11 @@ sure you have the actual analysis or position being audited.
 Once you know the entities in scope, fetch only the relevant
 entity context files:
 
-- UK: https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/03-compliance/comp-context-uk.md
-- CY: https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/03-compliance/comp-context-cy.md
-- DE: https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/03-compliance/comp-context-de.md
-- AU: https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/03-compliance/comp-context-au.md
-- ME: https://raw.githubusercontent.com/radoslavdimitrov-png/reg-product-factory/main/03-compliance/comp-context-me.md
+- UK: https://github.com/radoslavdimitrov-png/reg-product-factory/blob/main/compliance-context/comp-context-uk.md
+- CY: https://github.com/radoslavdimitrov-png/reg-product-factory/blob/main/compliance-context/comp-context-cy.md
+- DE: https://github.com/radoslavdimitrov-png/reg-product-factory/blob/main/compliance-context/comp-context-de.md
+- AU: https://github.com/radoslavdimitrov-png/reg-product-factory/blob/main/compliance-context/comp-context-au.md
+- ME: https://github.com/radoslavdimitrov-png/reg-product-factory/blob/main/compliance-context/comp-context-me.md
 
 Fetch every entity in scope. Do not fetch entities that are not
 in scope. If a fetch fails, tell the user rather than proceeding
