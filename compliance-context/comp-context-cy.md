@@ -16,10 +16,9 @@ Language: British English. No em dashes.
 - **Regulator:** CySEC (Cyprus Securities and Exchange Commission)
 - **Licence number:** 398/21
 - **Entity type:** Cyprus Investment Firm (CIF), full scope
-- **Framework:** MiFID II, as implemented in Cyprus, plus ESMA
-  measures
-- **Service model:** Execution-only. No investment advice, no
-  discretionary management.
+- **Service model:** Execution-only. Not a bank. No investment
+  advice, no discretionary portfolio management.
+- **MiFID II classification:** Systematic internaliser.
 - **Role in the group:** EU hub. Passports into other EU and EEA
   states under Freedom of Services.
 
@@ -30,8 +29,13 @@ Language: British English. No em dashes.
 Read CY through a MiFID II and ESMA lens, not a UK FCA one.
 Consumer Duty does not apply here; that is a UK concept. The
 equivalent pressure points in CY are MiFID II conduct rules,
-ESMA product intervention measures, and CySEC supervisory
-expectations.
+ESMA product intervention measures, MiCA for crypto, DORA for
+operational resilience, and CySEC supervisory expectations.
+
+The applicable regimes for CY are: MiFID II directive and
+delegated regulations, ESMA Q&As and guidelines, CySEC laws,
+circulars, directives, decisions and announcements for both CIFs
+and CASPs, MiCA, DORA, EU AML, and PRIIPs.
 
 Two structural permissions set CY apart from the UK and DE
 entities and matter for analysis:
@@ -51,31 +55,36 @@ usually the entity where the answer is yes.
 
 CY is the broadest product entity in the group. The following is
 the high-level picture for compliance scoping. For the
-authoritative live matrix, the user should confirm against the
-current product catalogue, since availability changes.
+authoritative live matrix, confirm against the current product
+catalogue, since availability changes.
 
 **Allowed in CY:**
 - Invest: stocks and ETFs, including fractional
 - CFDs across the full range: shares, ETFs, indices, commodities,
   FX, and crypto
 - Crypto spot. CY is the only T212 entity offering real crypto
-  spot trading.
+  spot trading. MiCA applies to this offering.
 - Crypto on the Invest account (multi-currency wallet). CY only.
 - Crypto ETNs
 - Complex and leveraged and inverse ETPs
 - Pies and AutoInvest, and Model Portfolios
 - Share lending (opt-in only)
 - Extended hours and 24/5 trading
-- Multi-currency account
-- Interest on cash via qualifying money market funds
+- Multi-currency account (ancillary)
+- Interest on cash via qualifying money market funds. Not a
+  deposit product.
 - Spending Pot, and Spare Change and Cashback (Spare Change and
   Cashback is CY only)
-- T212 Card
+- T212 Card. CY acts as agent and distributor of the card. The
+  card is issued by Paynetics, the BG-regulated EMI entity. CY is
+  not the issuer.
 - Portfolio transfers
 - CFD futures rollover
 
 **Not available in CY:**
 - ISA and SIPP. These are UK tax wrappers and do not exist in CY.
+- Discretionary portfolio management.
+- Investment or financial advice.
 
 ---
 
@@ -91,6 +100,8 @@ lower-friction path rather than breaking it:
   Clients convert within T212 and use funds within investment
   flows only.
 - Share lending is opt-in only, on explicit client choice.
+- Interest on cash is not a deposit product and must never be
+  framed as one.
 
 ---
 
@@ -98,8 +109,8 @@ lower-friction path rather than breaking it:
 
 These are the CY-specific obligations most likely to bear on a
 compliance analysis. Verify the precise current rule by browsing
-before relying on any of them; this list is a pointer, not a
-substitute for the primary source.
+the primary source before relying on any of them; this list is a
+pointer, not a substitute for the source.
 
 - **ESMA CFD measures:** leverage caps by asset class, and
   mandatory negative balance protection on CFD accounts. These
@@ -113,11 +124,72 @@ substitute for the primary source.
   initiates and is clearly informed. This is the basis on which
   the Invest appropriateness test can be removed for non-complex
   products.
+- **MiCA:** applies to the crypto spot offering as a crypto asset
+  service provider. Relevant whenever crypto spot is in scope.
+- **DORA:** digital operational resilience, ICT risk management,
+  and third-party risk obligations apply.
+- **PRIIPs:** KID requirements for packaged retail investment
+  products.
 - **Freedom of Services restrictions by state:** when CY passports
   into other EU states, local overlays can apply. Known position
   to verify: CFDs are offered with restrictions in Spain and
   France, and are not offered in Belgium. Confirm the current
   per-state position before relying on it, as these change.
+
+---
+
+## KYC and onboarding stack
+
+For grounding when an analysis touches onboarding or AML:
+- Identity verification: Onfido
+- Proof of address: Shufti Pro
+- Crypto asset screening: Refinitiv
+
+---
+
+## Regulatory sources for verification
+
+When verifying a CY citation, browse these primary sources first.
+Use the CySEC pages for CIF and CASP material specifically.
+
+**CySEC:**
+- News: https://www.cysec.gov.cy/en-GB/news/
+- Circulars: https://www.cysec.gov.cy/en-GB/public-info/circulars/
+- Decisions: https://www.cysec.gov.cy/en-GB/public-info/decisions/
+- Press releases: https://www.cysec.gov.cy/en-GB/public-info/press-releases/
+
+**Central Bank of Cyprus:**
+- https://www.centralbank.cy/en/publications-research
+
+**ESMA:**
+- News: https://www.esma.europa.eu/press-news/esma-news
+- Consultations: https://www.esma.europa.eu/press-news/consultations
+- MiFID II and MiFIR: https://www.esma.europa.eu/regulation/mifid-ii-and-mifir
+
+**EBA:**
+- https://www.eba.europa.eu/news-press
+- https://www.eba.europa.eu/publications-and-media/press-releases
+
+**EU institutions and law:**
+- European Commission finance news: https://ec.europa.eu/info/news
+- Have your say: https://ec.europa.eu/info/law/better-regulation/have-your-say_en
+- EUR-Lex: https://eur-lex.europa.eu/homepage.html
+- Finance public consultations: https://finance.ec.europa.eu/public-consultations_en
+- AMLA consultations: https://www.amla.europa.eu/policy/public-consultations_en
+
+**Data protection and operational resilience:**
+- EDPB: https://www.edpb.europa.eu/edpb_en
+- Cyprus Data Protection: https://www.dataprotection.gov.cy/
+- ENISA: https://www.enisa.europa.eu/publications
+
+**Payments and central banking:**
+- ECB: https://www.ecb.europa.eu/press/html/index.en.html
+- European Payments Council: https://www.europeanpaymentscouncil.eu/document-library
+
+**Global standard-setters:**
+- IOSCO: https://www.iosco.org/news_publications/news_index.htm
+- FSB: https://www.fsb.org/publications/
+- FATF: https://www.fatf-gafi.org/en/publications.html
 
 ---
 
