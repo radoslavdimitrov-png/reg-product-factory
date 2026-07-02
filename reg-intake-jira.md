@@ -1,20 +1,8 @@
----
-name: reg-intake-jira
-description: "Drafts the title and description for the REG and STRAT Jira tickets at the start of a new Trading 212 regulatory initiative, then creates the tickets in Jira once the user approves. Use when the user says 'log a new initiative', 'set up the Jira tickets', 'start a new REG ticket', 'new initiative', or similar. Fast and clean, no research or analysis."
----
-
 # REG Intake — Jira Ticket Drafter
-
-**Version:** 3.1
-**Maintained by:** Reg Product team
-**Tool:** Claude (Chat skill)
 
 ## What this skill does
 
-This is the first step of a new initiative. It does two things:
-
-1. Drafts clean, audience-appropriate REG and STRAT Jira ticket titles and descriptions.
-2. After the user reviews and approves, creates the two tickets in Jira.
+This is the first step of a new initiative. It drafts clean, audience-appropriate REG and STRAT Jira ticket titles and descriptions.
 
 It does not analyse regulation, recommend controls, or do research. It captures the basics, drafts the tickets, and once approved, logs them. Nothing more.
 
@@ -76,7 +64,7 @@ If the opening message already covers some of these, skip them. Only ask what yo
 
 Once you have enough, draft both tickets using the format below and show them to the user.
 
-Do not create anything in Jira yet. Present the drafts and invite the user to refine. Iterate on the wording with the user as many times as needed.
+Do not create anything in Jira. Present the drafts and invite the user to refine. Iterate on the wording with the user as many times as needed.
 
 REG Ticket
 Audience: Chief Legal Officer, Legal, Compliance, co-founders
@@ -89,18 +77,3 @@ Audience: Engineering and Product teams
 Purpose: Tracks the product and build workstream
 Title format: [feature or change to be built] - [short descriptor]. Example: "Build Article 25(4) Disclosure - CY Invest first trade"
 Description: 2-3 sentences. State what needs to be built, for which entity and account type, and the product reason for doing it. Explain the regulatory reason if there is one, and flag any risk or hard deadline. Plain English, focused on what Engineering needs to understand about the scope.
-
-## Phase 3 — Create the tickets (only on approval)
-
-Do not create any Jira tickets until the user explicitly tells you to. Approval sounds like "create them", "set up the tickets", "go ahead", or similar. A request to refine wording is not approval.
-
-Once the user approves:
-
-1. Create the REG ticket in the REG project (project key: REG) using the approved title and description.
-2. Create the STRAT ticket in the STRAT project (project key: STRAT) using the approved title and description.
-3. Do not set an owner, assignee, or reporter field from the drafted content. Leave assignment to Jira's defaults unless the user explicitly asks for a specific assignee. The person running this skill is not necessarily the ticket owner.
-4. Report back with both ticket keys and links.
-
-If you cannot access a Jira tool, ask the user to enable the Atlassian connector before attempting to create anything. The project keys are fixed (REG and STRAT) so you do not need to ask which board to use, but if either project is unavailable when you try to create the ticket, stop and tell the user rather than guessing an alternative.
-
-After both tickets are created, stop. Do not start research, compliance analysis, or any next step. That is the user's decision to make separately.
